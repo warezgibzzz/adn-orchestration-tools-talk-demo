@@ -1,0 +1,8 @@
+[web]
+adn-talks-ansible-1.box
+[elastic]
+adn-talks-ansible-2.box
+[mysql]
+adn-talks-ansible-3.box
+[redis]
+adn-talks-ansible-4.box

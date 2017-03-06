@@ -1,0 +1,24 @@
+- hosts: web
+  user: ubuntu
+  sudo: yes
+  roles:
+    - { role: geerlingguy.apache }
+
+- hosts: elastic
+  user: ubuntu
+  sudo: yes
+  roles:
+    - { role: geerlingguy.elasticsearch }
+
+- hosts: mysql
+  user: ubuntu
+  sudo: yes
+  roles:
+    - { role: geerlingguy.mysql }
+
+- hosts: redis
+  user: ubuntu
+  sudo: yes
+  roles:
+    - { role: geerlingguy.redis }
+
