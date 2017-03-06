@@ -1,3 +1,4 @@
+php_webserver_daemon: "nginx"
 php_memory_limit: "256M"
 php_max_execution_time: "90"
 php_upload_max_filesize: "256M"
