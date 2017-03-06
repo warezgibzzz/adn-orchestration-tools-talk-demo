@@ -5,7 +5,7 @@ nginx_vhosts:
   - listen:
       - "80 default_server"
       - "443 ssl"
-    server_name: "nginx.ansible.gibzzz.tk"
+    server_name: "nginx.gibzzz.ml"
     root: "/var/www/nginx.ansible.gibzzz.tk"
     index: "index.php index.html index.htm"
     extra_parameters: |
