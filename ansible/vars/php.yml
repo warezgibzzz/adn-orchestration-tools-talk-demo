@@ -8,7 +8,7 @@ php_packages:
   - php-gd
   - php-mbstring
   - php-pdo
-  - php-pecl-apcu
+  - php-apcu
   - php-xml
 php_fpm_listen: "unix:/var/run/php5-fpm.sock"
 php_fpm_listen_allowed_clients: "127.0.0.1"
