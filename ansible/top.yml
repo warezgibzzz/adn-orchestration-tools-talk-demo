@@ -4,9 +4,12 @@
   vars_files:
     - vars/php.yml
     - vars/nginx.yml
+    - vars/letsencrypt.yml
   roles:
+    - { role: geerlingguy.git }
     - { role: geerlingguy.php }
     - { role: geerlingguy.nginx }
+    - { role: geerlingguy.letsencrypt }
 
 - hosts: elastic
   user: ubuntu
