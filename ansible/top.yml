@@ -1,24 +1,34 @@
 - hosts: web
   user: ubuntu
   sudo: yes
+  vars_files:
+    - vars/php.yml
+    - vars/nginx.yml
   roles:
-    - { role: geerlingguy.apache }
+    - { role: geerlingguy.php }
+    - { role: geerlingguy.nginx }
 
 - hosts: elastic
   user: ubuntu
   sudo: yes
+  vars_files:
+    - vars/elastic.yml
   roles:
     - { role: geerlingguy.elasticsearch }
 
 - hosts: mysql
   user: ubuntu
   sudo: yes
+  vars_files:
+    - vars/mysql.yml
   roles:
     - { role: geerlingguy.mysql }
 
 - hosts: redis
   user: ubuntu
   sudo: yes
+  vars_files:
+    - vars/redis.yml
   roles:
     - { role: geerlingguy.redis }
 

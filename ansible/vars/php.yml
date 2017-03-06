@@ -1,0 +1,19 @@
+php_memory_limit: "256M"
+php_max_execution_time: "90"
+php_upload_max_filesize: "256M"
+php_packages:
+  - php
+  - php-cli
+  - php-common
+  - php-devel
+  - php-gd
+  - php-mbstring
+  - php-pdo
+  - php-pecl-apcu
+  - php-xml
+php_fpm_listen: "unix:/var/run/php5-fpm.sock"
+php_fpm_listen_allowed_clients: "127.0.0.1"
+php_fpm_pm_max_children: 50
+php_fpm_pm_start_servers: 5
+php_fpm_pm_min_spare_servers: 5
+php_fpm_pm_max_spare_servers: 5
