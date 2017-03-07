@@ -21,6 +21,12 @@ nginx_vhosts:
     ssl_ciphers:  "HIGH:!RC4:!aNULL:!MD5:!kEDH"
     add_header: "Strict-Transport-Security 'max-age=604800'"
     extra_parameters: |
+      keepalive_timeout 60;
+      ssl_certificate "/etc/letsencrypt/live/nginx.gibzzz.ml/chain.pem";
+      ssl_certificate_key "/etc/letsencrypt/live/nginx.gibzzz.ml/privkey.pem";
+      ssl_protocols "TLSv1 TLSv1.1 TLSv1.2";
+      ssl_ciphers  "HIGH:!RC4:!aNULL:!MD5:!kEDH";
+      add_header "Strict-Transport-Security 'max-age=604800'";
       location ~ \.php$ {
           fastcgi_split_path_info ^(.+\.php)(/.+)$;
           fastcgi_pass unix:/var/run/php5-fpm.sock;
