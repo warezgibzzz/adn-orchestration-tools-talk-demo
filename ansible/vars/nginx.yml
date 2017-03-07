@@ -10,23 +10,28 @@ nginx_extra_http_options: |
 nginx_vhosts:
   - listen:
       - "80 default_server"
+    server_name: "nginx.gibzzz.ml"
+    return: "301 https://$host$request_uri"
+  - listen:
       - "443 ssl"
     server_name: "nginx.gibzzz.ml"
     root: "/var/www/nginx.ansible.gibzzz.tk"
     index: "index.php index.html index.htm"
     keepalive_timeout: 60
-    ssl_certificate: "/etc/letsencrypt/live/nginx.gibzzz.ml/chain.pem"
-    ssl_certificate_key: "/etc/letsencrypt/live/nginx.gibzzz.ml/privkey.pem"
-    ssl_protocols: "TLSv1 TLSv1.1 TLSv1.2"
-    ssl_ciphers:  "HIGH:!RC4:!aNULL:!MD5:!kEDH"
-    add_header: "Strict-Transport-Security 'max-age=604800'"
     extra_parameters: |
       keepalive_timeout 60;
-      ssl_certificate "/etc/letsencrypt/live/nginx.gibzzz.ml/chain.pem";
+      ssl on;
+      ssl_stapling on;
+      ssl_session_timeout 24h;
+      ssl_session_cache shared:SSL:2m;
+      ssl_dhparam "/etc/ssl/certs/dhparam.pem";
+      ssl_certificate "/etc/letsencrypt/live/nginx.gibzzz.ml/fullchain.pem";
       ssl_certificate_key "/etc/letsencrypt/live/nginx.gibzzz.ml/privkey.pem";
-      ssl_protocols "TLSv1 TLSv1.1 TLSv1.2";
-      ssl_ciphers  "HIGH:!RC4:!aNULL:!MD5:!kEDH";
-      add_header "Strict-Transport-Security 'max-age=604800'";
+      ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+      ssl_prefer_server_ciphers on;
+      ssl_ciphers  "kEECDH+AES128:kEECDH:kEDH:-3DES:kRSA+AES128:kEDH+3DES:DES-CBC3-SHA:!RC4:!aNULL:!eNULL:!MD5:!EXPORT:!LOW:!SEED:!CAMELLIA:!IDEA:!PSK:!SRP:!SSLv2";
+      add_header Strict-Transport-Security 'max-age=31536000';
+      add_header Content-Security-Policy-Report-Only "default-src https:; script-src https: 'unsafe-eval' 'unsafe-inline'; style-src https: 'unsafe-inline'; img-src https: data:; font-src https: data:; report-uri /csp-report";
       location ~ \.php$ {
           fastcgi_split_path_info ^(.+\.php)(/.+)$;
           fastcgi_pass unix:/var/run/php5-fpm.sock;
