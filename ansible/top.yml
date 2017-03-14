@@ -11,7 +11,7 @@
     - { role: geerlingguy.php }
     - { role: geerlingguy.nginx }
     - { role: geerlingguy.letsencrypt }
-    - { role: dj-wassabi.zabbix-agent }
+    - { role: dj-wasabi.zabbix-agent }
 
 - hosts: elastic
   user: ubuntu
@@ -21,7 +21,7 @@
     - vars/zabbix.yml
   roles:
     - { role: geerlingguy.elasticsearch }
-    - { role: dj-wassabi.zabbix-agent }
+    - { role: dj-wasabi.zabbix-agent }
 
 - hosts: mysql
   user: ubuntu
@@ -31,7 +31,7 @@
     - vars/zabbix.yml
   roles:
     - { role: geerlingguy.mysql }
-    - { role: dj-wassabi.zabbix-agent }
+    - { role: dj-wasabi.zabbix-agent }
 
 - hosts: redis
   user: ubuntu
@@ -41,7 +41,7 @@
     - vars/zabbix.yml
   roles:
     - { role: geerlingguy.redis }
-    - { role: dj-wassabi.zabbix-agent }
+    - { role: dj-wasabi.zabbix-agent }
 
 - hosts: symfony-rabbitmq
   user: ubuntu
@@ -58,5 +58,5 @@
     - { role: geerlingguy.nginx }
     - { role: geerlingguy.letsencrypt }
     - { role: alexeymedvedchikov.rabbitmq }
-    - { role: dj-wassabi.zabbix-agent }
+    - { role: dj-wasabi.zabbix-agent }
 
