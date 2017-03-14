@@ -5,6 +5,7 @@ nodes = [
   { :nodename => "adn-talks-ansible-2", :ip => '192.168.2.3', :box => 'ubuntu/xenial64', :ram => 2048 },
   { :nodename => "adn-talks-ansible-3", :ip => '192.168.2.4', :box => 'ubuntu/xenial64' },
   { :nodename => "adn-talks-ansible-4", :ip => '192.168.2.5', :box => 'ubuntu/xenial64' },
+  { :nodename => "adn-talks-ansible-5", :ip => '192.168.2.6', :box => 'ubuntu/xenial64', :ram => 2048 },
 ]
 
 Vagrant.configure("2") do |config|

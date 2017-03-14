@@ -6,3 +6,5 @@ adn-talks-ansible-2.box
 adn-talks-ansible-3.box
 [redis]
 adn-talks-ansible-4.box
+[symfony-rabbitmq]
+adn-talks-ansible-5.box
