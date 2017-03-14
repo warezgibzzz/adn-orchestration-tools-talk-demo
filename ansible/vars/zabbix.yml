@@ -1,0 +1,14 @@
+agent_server: 107.21.188.131
+agent_serveractive: 107.21.188.131
+zabbix_url: http://uptime.gq
+zabbix_api_use: true
+zabbix_api_user: gibz
+zabbix_api_pass: Squad1995
+zabbix_create_host: present
+#
+
+zabbix_host_groups:
+  - Linux Servers
+  - web checks
+zabbix_link_templates:
+  - Template OS Linux
