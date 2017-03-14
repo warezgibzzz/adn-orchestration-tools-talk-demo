@@ -40,7 +40,7 @@ Vagrant.configure("2") do |config|
       # delete default gw on eth0
       nodeconfig.vm.provision "shell",
         run: "always",
-        inline: "eval `route -n | awk '{ if ($8 ==\"enp0s3\" && $2 != \"0.0.0.0\") print \"route del default gw \" $2; }'`"
+        inline: "eval `route -n | awk '{ if ($8 ==\"enp0s3\") print \"route del default gw \" $2; }'`"
 
     end
   end
