@@ -5,6 +5,7 @@
     - vars/php.yml
     - vars/nginx.yml
     - vars/letsencrypt.yml
+    - vars/zabbix.yml
   roles:
     - { role: geerlingguy.git }
     - { role: geerlingguy.php }
@@ -17,6 +18,7 @@
   sudo: yes
   vars_files:
     - vars/elastic.yml
+    - vars/zabbix.yml
   roles:
     - { role: geerlingguy.elasticsearch }
     - { role: dj-wassabi.zabbix-agent }
@@ -26,6 +28,7 @@
   sudo: yes
   vars_files:
     - vars/mysql.yml
+    - vars/zabbix.yml
   roles:
     - { role: geerlingguy.mysql }
     - { role: dj-wassabi.zabbix-agent }
@@ -35,6 +38,7 @@
   sudo: yes
   vars_files:
     - vars/redis.yml
+    - vars/zabbix.yml
   roles:
     - { role: geerlingguy.redis }
     - { role: dj-wassabi.zabbix-agent }
@@ -47,6 +51,7 @@
     - vars/letsencrypt.yml
     - vars/rabbitmq.yml
     - vars/symfony.yml
+    - vars/zabbix.yml
   roles:
     - { role: geerlingguy.git }
     - { role: geerlingguy.php }
